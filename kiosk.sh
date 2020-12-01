@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get our environment variables
+source ~/.env
+
 # Screen settings
 xset s noblank
 xset s off
