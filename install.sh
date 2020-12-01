@@ -128,10 +128,16 @@ fi
 # 888    Y88b 888  "Y88P"   88888P' 888  888
 
 # Create service
-sudo cp /home/pi/kiosk.service /lib/systemd/system/kiosk.service
+sudo cp ./kiosk.service /lib/systemd/system/kiosk.service
 
 # Enable the new service
 sudo systemctl enable kiosk.service
 
 # Start the new service
 sudo systemctl start kiosk.service
+
+# Copy script to home folder
+cp ./kiosk.sh ~/
+
+# Open chromium so it creates default settings in `~/.config`
+/usr/bin/chromium-browser
