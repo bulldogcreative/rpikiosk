@@ -1,5 +1,23 @@
 #!/bin/bash
 
+source ~/.env
+
+# 888    888  .d88888b.   .d8888b. 88888888888
+# 888    888 d88P" "Y88b d88P  Y88b    888
+# 888    888 888     888 Y88b.         888
+# 8888888888 888     888  "Y888b.      888
+# 888    888 888     888     "Y88b.    888
+# 888    888 888     888       "888    888
+# 888    888 Y88b. .d88P Y88b  d88P    888
+# 888    888  "Y88888P"   "Y8888P"     888
+
+if [[ -z $PI_HOSTNAME ]]; then
+    echo "Skipping hostname"
+else
+    sudo echo $PI_HOSTNAME > /etc/hostname
+    sudo hostname $PI_HOSTNAME
+fi
+
 #  .d8888b.   .d8888b.  888    888
 # d88P  Y88b d88P  Y88b 888    888
 # Y88b.      Y88b.      888    888
