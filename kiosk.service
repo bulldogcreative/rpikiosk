@@ -6,6 +6,7 @@ After=graphical.target unclutter.service
 [Service]
 Environment=DISPLAY=:0.0
 Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=KIOSK_URL=REPLACE_ME
 Type=simple
 ExecStartPre=/home/pi/kiosk.sh
 ExecStart=/usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk $KIOSK_URL

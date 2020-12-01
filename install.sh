@@ -16,6 +16,7 @@ if [[ -z $PI_HOSTNAME ]]; then
 else
     sudo echo $PI_HOSTNAME > /etc/hostname
     sudo hostname $PI_HOSTNAME
+    sudo echo "127.0.0.1    $PI_HOSTNAME" >> /etc/hosts
 fi
 
 #  .d8888b.   .d8888b.  888    888
@@ -126,6 +127,9 @@ sudo systemctl start vncserver-x11-serviced.service
 # 888  Y88b   888 888  888 "Y8888b. 888888K
 # 888   Y88b  888 Y88..88P      X88 888 "88b
 # 888    Y88b 888  "Y88P"   88888P' 888  888
+
+# Customize the service file with the kiosk url
+sed -i "s^REPLACE_ME^$KIOSK_URL^g" ./kiosk.service
 
 # Create service
 sudo cp ./unclutter.service /lib/systemd/system/unclutter.service
