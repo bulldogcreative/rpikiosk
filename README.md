@@ -10,3 +10,14 @@ https://bit.ly/bcs-pi
 1. Run `install.sh`
 1. Close Chromium
 1. Reboot
+
+## Faq
+
+Q. It opens open the browser and tries to go to "REPLACE_ME"
+
+You need to edit `/lib/systemd/system/kiosk.service` and change `REPLACE_ME`
+with the real URL.
+
+Run `systemctl daemon-reload`
+
+Reboot.
