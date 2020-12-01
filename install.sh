@@ -112,11 +112,11 @@ else
     sudo vncserver-x11 -service -joinCloud $VNC_TOKEN
 fi
 
-    # Enable VNC service
-    sudo systemctl enable vncserver-x11-serviced.service
+# Enable VNC service
+sudo systemctl enable vncserver-x11-serviced.service
 
-    # Start VNC service
-    sudo systemctl start vncserver-x11-serviced.service
+# Start VNC service
+sudo systemctl start vncserver-x11-serviced.service
 
 # 888    d8P  d8b                   888
 # 888   d8P   Y8P                   888
