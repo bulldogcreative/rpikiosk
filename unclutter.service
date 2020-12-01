@@ -1,0 +1,16 @@
+[Unit]
+Description=Unclutter
+Wants=graphical.target
+After=graphical.target
+
+[Service]
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Type=simple
+ExecStart=/usr/bin/unclutter -idle 0.5 -root
+Restart=on-abort
+User=pi
+Group=pi
+
+[Install]
+WantedBy=graphical.target

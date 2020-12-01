@@ -128,13 +128,15 @@ sudo systemctl start vncserver-x11-serviced.service
 # 888    Y88b 888  "Y88P"   88888P' 888  888
 
 # Create service
+sudo cp ./unclutter.service /lib/systemd/system/unclutter.service
 sudo cp ./kiosk.service /lib/systemd/system/kiosk.service
 
 # Enable the new service
+sudo systemctl enable unclutter.service
 sudo systemctl enable kiosk.service
 
 # Start the new service
-sudo systemctl start kiosk.service
+#sudo systemctl start kiosk.service
 
 # Copy script to home folder
 cp ./kiosk.sh ~/
