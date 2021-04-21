@@ -140,7 +140,7 @@ sudo systemctl start vncserver-x11-serviced.service
 # 888    Y88b 888  "Y88P"   88888P' 888  888
 
 # Customize the service file with the kiosk url
-sed -i "s^REPLACE_ME^$KIOSK_URL^g" ./kiosk.service
+envsubst < ./kiosk.service > ./kiosk.service
 
 # Create service
 sudo cp ./unclutter.service /lib/systemd/system/unclutter.service
