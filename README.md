@@ -1,7 +1,5 @@
 # kiosk
 
-https://bit.ly/bcs-pi
-
 ## Usage
 
 1. Change password
