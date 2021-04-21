@@ -152,6 +152,7 @@ sudo systemctl enable unclutter.service
 sudo systemctl enable kiosk.service
 
 # Start the new service
+# It will start after a reboot, which we need to do anyway.
 #sudo systemctl start kiosk.service
 
 # Copy script to home folder
