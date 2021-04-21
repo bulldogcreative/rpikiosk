@@ -19,6 +19,17 @@ else
     sudo echo "127.0.0.1    $PI_HOSTNAME" >> /etc/hosts
 fi
 
+# 888       888 d8b 8888888888 d8b
+# 888   o   888 Y8P 888        Y8P
+# 888  d8b  888     888
+# 888 d888b 888 888 8888888    888
+# 888d88888b888 888 888        888
+# 88888P Y88888 888 888        888
+# 8888P   Y8888 888 888        888
+# 888P     Y888 888 888        888
+
+envsubst < ./wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf
+
 #  .d8888b.   .d8888b.  888    888
 # d88P  Y88b d88P  Y88b 888    888
 # Y88b.      Y88b.      888    888
