@@ -147,6 +147,7 @@ sudo cp ./unclutter.service /lib/systemd/system/unclutter.service
 sudo cp ./kiosk.service /lib/systemd/system/kiosk.service
 
 # Enable the new service
+sudo systemctl daemon-reload
 sudo systemctl enable unclutter.service
 sudo systemctl enable kiosk.service
 
