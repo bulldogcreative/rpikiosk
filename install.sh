@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.env
+source ./.env
 
 # 888    888  .d88888b.   .d8888b. 88888888888
 # 888    888 d88P" "Y88b d88P  Y88b    888
@@ -151,7 +151,7 @@ sudo systemctl enable unclutter.service
 sudo systemctl enable kiosk.service
 
 # Start the new service
-#sudo systemctl start kiosk.service
+sudo systemctl start kiosk.service
 
 # Copy script to home folder
 cp ./kiosk.sh ~/
