@@ -38,7 +38,7 @@ fi
 # 888P     Y888 888 888        888
 
 envsubst < ./configs/wpa_supplicant.conf >> ./wpa_supplicant.conf
-sudo mv ./wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
+sudo su -c "cat ./wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf"
 
 #  .d8888b.   .d8888b.  888    888
 # d88P  Y88b d88P  Y88b 888    888
