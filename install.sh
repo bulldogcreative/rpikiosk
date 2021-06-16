@@ -5,6 +5,8 @@ echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
 echo "LANG=en_US.UTF-8" | sudo tee -a /etc/locale.conf
 sudo locale-gen en_US.UTF-8
 
+reset
+
 # Run apt update before anything else.
 sudo apt update -y
 
