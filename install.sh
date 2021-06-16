@@ -45,8 +45,8 @@ envsubst < ./configs/wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.c
 # SSH is disabled by default.
 
 # Secure Pi
-mkdir .ssh
-chmod 755 .ssh
+mkdir ~/.ssh
+chmod 755 ~/.ssh
 
 if [[ -f "~/.ssh/authorized_keys" ]]; then
     echo "Authorized Keys already exists"
