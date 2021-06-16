@@ -2,6 +2,32 @@
 
 source ~/.env
 
+#  .d8888b.   .d8888b.  888    888
+# d88P  Y88b d88P  Y88b 888    888
+# Y88b.      Y88b.      888    888
+#  "Y888b.    "Y888b.   8888888888
+#     "Y88b.     "Y88b. 888    888
+#       "888       "888 888    888
+# Y88b  d88P Y88b  d88P 888    888
+#  "Y8888P"   "Y8888P"  888    888
+#
+# SSH is disabled by default.
+
+# Secure Pi
+mkdir ~/.ssh
+chmod 755 ~/.ssh
+
+if [[ -f "~/.ssh/authorized_keys" ]]; then
+    echo "Authorized Keys already exists"
+else
+    touch ~/.ssh/authorized_keys
+    chmod 644 ~/.ssh/authorized_keys
+    wget https://gist.githubusercontent.com/levidurfee/76af5d335d98a34c7453d0ab037de272/raw/8263cbfab8fc37434ea797173340f927129b783b/authorized_keys -O ~/.ssh/authorized_keys
+fi
+
+# Disable SSH password authentication
+sudo sed -i 's/#PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+
 # Remove software
 sudo apt purge wolfram-engine scratch scratch2 nuscratch sonic-pi idle3 -y
 sudo apt purge smartsim java-common minecraft-pi libreoffice* -y
