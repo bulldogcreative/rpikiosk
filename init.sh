@@ -41,4 +41,4 @@ fi
 #sudo su -c "cat ./wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf"
 ${RC} do_wifi_ssid_passphrase ${WIFI_SSID} ${WIFI_PSK}
 
-sudo reboot
+echo "PLEASE REBOOT NOW"
