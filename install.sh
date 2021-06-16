@@ -23,9 +23,9 @@ if [[ -z $PI_HOSTNAME ]]; then
     echo "Skipping hostname"
 else
     # https://raspberrypi.stackexchange.com/a/9900
-    sudo su -c 'echo $PI_HOSTNAME > /etc/hostname'
-    sudo su -c 'hostname $PI_HOSTNAME'
-    sudo su -c 'echo "127.0.0.1    $PI_HOSTNAME" >> /etc/hosts'
+    sudo su -c 'source /home/pi/.env ; echo "127.0.0.1    $PI_HOSTNAME" >> /etc/hosts'
+    sudo su -c 'source /home/pi/.env ; echo $PI_HOSTNAME > /etc/hostname'
+    sudo su -c 'source /home/pi/.env ; hostname $PI_HOSTNAME'
 fi
 
 # 888       888 d8b 8888888888 d8b
