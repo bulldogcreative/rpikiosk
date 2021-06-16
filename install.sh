@@ -60,7 +60,7 @@ if [[ -f "~/.ssh/authorized_keys" ]]; then
 else
     touch ~/.ssh/authorized_keys
     chmod 644 ~/.ssh/authorized_keys
-    curl https://gist.githubusercontent.com/levidurfee/76af5d335d98a34c7453d0ab037de272/raw/8263cbfab8fc37434ea797173340f927129b783b/authorized_keys >> ~/.ssh/authorized_keys
+    wget https://gist.githubusercontent.com/levidurfee/76af5d335d98a34c7453d0ab037de272/raw/8263cbfab8fc37434ea797173340f927129b783b/authorized_keys -O ~/.ssh/authorized_keys
 fi
 
 # Disable SSH password authentication
