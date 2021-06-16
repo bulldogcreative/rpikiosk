@@ -37,7 +37,8 @@ fi
 # 8888P   Y8888 888 888        888
 # 888P     Y888 888 888        888
 
-envsubst < ./configs/wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf
+envsubst < ./configs/wpa_supplicant.conf >> ./wpa_supplicant.conf
+sudo mv ./wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 #  .d8888b.   .d8888b.  888    888
 # d88P  Y88b d88P  Y88b 888    888
@@ -63,7 +64,7 @@ else
 fi
 
 # Disable SSH password authentication
-sed -i 's/#PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/#PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
 
 # 88888888888 d8b      888
 #     888     Y8P      888
