@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run apt update before anything else.
+sudo apt update -y
+
 source ~/.env
 
 # 888    888  .d88888b.   .d8888b. 88888888888
@@ -28,7 +31,7 @@ fi
 # 8888P   Y8888 888 888        888
 # 888P     Y888 888 888        888
 
-envsubst < ./wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf
+envsubst < ./configs/wpa_supplicant.conf >> /etc/wpa_supplicant/wpa_supplicant.conf
 
 #  .d8888b.   .d8888b.  888    888
 # d88P  Y88b d88P  Y88b 888    888
@@ -48,9 +51,9 @@ chmod 755 .ssh
 if [[ -f "~/.ssh/authorized_keys" ]]; then
     echo "Authorized Keys already exists"
 else
-    touch .ssh/authorized_keys
-    chmod 644 .ssh/authorized_keys
-    curl https://gist.githubusercontent.com/levidurfee/76af5d335d98a34c7453d0ab037de272/raw/8263cbfab8fc37434ea797173340f927129b783b/authorized_keys >> .ssh/authorized_keys
+    touch ~/.ssh/authorized_keys
+    chmod 644 ~/.ssh/authorized_keys
+    curl https://gist.githubusercontent.com/levidurfee/76af5d335d98a34c7453d0ab037de272/raw/8263cbfab8fc37434ea797173340f927129b783b/authorized_keys >> ~/.ssh/authorized_keys
 fi
 
 # Disable SSH password authentication
@@ -140,10 +143,10 @@ sudo systemctl start vncserver-x11-serviced.service
 # 888    Y88b 888  "Y88P"   88888P' 888  888
 
 # Customize the service file with the kiosk url
-envsubst < ./kiosk.service > ./kiosk.service
+envsubst < ./services/kiosk.service > ./kiosk.service
 
 # Create service
-sudo cp ./unclutter.service /lib/systemd/system/unclutter.service
+sudo cp ./services/unclutter.service /lib/systemd/system/unclutter.service
 sudo cp ./kiosk.service /lib/systemd/system/kiosk.service
 
 # Enable the new service
@@ -156,7 +159,7 @@ sudo systemctl enable kiosk.service
 #sudo systemctl start kiosk.service
 
 # Copy script to home folder
-cp ./kiosk.sh ~/
+cp ./scripts/kiosk.sh ~/
 
 # Open chromium so it creates default settings in `~/.config`
 /usr/bin/chromium-browser
