@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run apt update before anything else.
+sudo apt update -y
+
 source ~/.env
 
 # 888    888  .d88888b.   .d8888b. 88888888888
