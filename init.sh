@@ -14,7 +14,7 @@ fi
 
 sudo systemctl stop bluetooth
 sudo systemctl disable bluetooth
-sudo apt purge bluez -y
+sudo apt remove bluez -y
 sudo apt autoremove -y
 
 echo "PLEASE REBOOT NOW"
