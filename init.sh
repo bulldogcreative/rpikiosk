@@ -11,4 +11,7 @@ else
     sudo hostnamectl set-hostname ${PI_HOSTNAME}
 fi
 
+sudo apt-get purge bluez -y
+sudo apt-get autoremove -y
+
 echo "PLEASE REBOOT NOW"
