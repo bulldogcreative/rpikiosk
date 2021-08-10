@@ -1,7 +1,7 @@
 [Unit]
 Description=Chromium Kiosk
-Wants=graphical.target network-online.target
-After=graphical.target network-online.target unclutter.service
+Wants=graphical.target network.target
+After=graphical.target network.target unclutter.service
 
 [Service]
 Environment=DISPLAY=:0.0
