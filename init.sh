@@ -12,7 +12,9 @@ else
     sudo hostnamectl set-hostname ${PI_HOSTNAME}
 fi
 
-sudo apt-get purge bluez -y
-sudo apt-get autoremove -y
+sudo systemctl stop bluetooth
+sudo systemctl disable bluetooth
+sudo apt purge bluez -y
+sudo apt autoremove -y
 
 echo "PLEASE REBOOT NOW"
