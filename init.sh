@@ -18,6 +18,6 @@ sudo systemctl disable hciuart.service
 sudo apt remove bluez -y
 sudo apt autoremove -y
 
-sudo echo "dtoverlay=disable-bt" >> /boot/config.txt
+echo "dtoverlay=disable-bt" | sudo tee -a /boot/config.txt
 
 echo "PLEASE REBOOT NOW"
